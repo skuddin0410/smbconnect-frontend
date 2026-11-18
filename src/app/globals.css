@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #002364;
+  --color-navy-2: #0a3a8c;
+  --color-blue: #0050b8;
+  --color-sky: #dce8f8;
+  --color-mist: #eef2f8;
+  --color-line: #d6deea;
+  --color-ink: #13213a;
+  --color-muted: #55657f;
+  --color-amber: #e5a23a;
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  color: var(--color-ink);
+  background: #fff;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-variation-settings: "wdth" 100;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+/* Signage headline: the wide cut of Archivo, used only for display type. */
+.display {
+  font-variation-settings: "wdth" 125;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+}
+.display-soft {
+  font-variation-settings: "wdth" 118;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+a { text-underline-offset: 0.18em; }
+
+:focus-visible {
+  outline: 3px solid var(--color-amber);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Monogram tiles for businesses without a logo */
+.tile { display: grid; place-items: center; font-variation-settings: "wdth" 125; font-weight: 800; letter-spacing: 0.02em; }
+.tone-navy { background: var(--color-navy); color: #fff; }
+.tone-blue { background: var(--color-blue); color: #fff; }
+.tone-sky { background: var(--color-sky); color: var(--color-navy); }
+.tone-amber { background: #fbe9c8; color: #7a4a06; }
+.tone-slate { background: #e3e8f0; color: #2b3a55; }
+
+/* Hero sentence: the fill-in blanks */
+.blank {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-bottom: 4px solid var(--color-amber);
+  color: #fff;
+  font: inherit;
+  font-variation-settings: inherit;
+  padding: 0 0.1em;
+  border-radius: 0;
+  max-width: 100%;
+}
+.blank:focus { outline: none; border-bottom-color: #fff; }
+.blank::placeholder { color: rgba(255, 255, 255, 0.55); }
+select.blank { cursor: pointer; padding-right: 0.2em; field-sizing: content; }
+select.blank option { color: var(--color-ink); font-size: 1rem; font-variation-settings: "wdth" 100; font-weight: 400; }
+
+.prose-listing p { margin: 0 0 1em; }
+.prose-listing ul, .prose-listing ol { margin: 0 0 1em 1.25em; list-style: disc; }
+.prose-listing ol { list-style: decimal; }
+.prose-listing h2, .prose-listing h3, .prose-listing h4 { font-weight: 700; margin: 1.4em 0 0.4em; font-size: 1.15rem; }
+.prose-listing a { color: var(--color-blue); text-decoration: underline; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { animation: reveal 600ms cubic-bezier(.2,.7,.2,1) both; }
+  .reveal-2 { animation-delay: 120ms; }
+  .reveal-3 { animation-delay: 240ms; }
+}
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
